@@ -28,8 +28,8 @@ interface
     function batas (t: ttanggal ; n: integer) : ttanggal;
     (*Menentukan tanggal batas untuk pengumpulan*)
 	
-	function hash (t : string) : string;
-	(*Melakukan hash pada suatu string (password)*)
+    function hash (t : string) : string;
+    (*Melakukan hash pada suatu string (password)*)
 
     function unhash (t: string) : string;
     (*Mengembalikan password dari bentuk hashnya ke semula*)
