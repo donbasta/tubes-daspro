@@ -8,25 +8,25 @@ var
 
     array_buku : tabBuku; //array data buku 
 
-	array_user : tabUser; //array data user
+    array_user : tabUser; //array data user
 
-	array_pinjam : tabPinjam; //array data pinjam
+    array_pinjam : tabPinjam; //array data pinjam
 
-	array_kembali : tabKembali; //array data kembali
+    array_kembali : tabKembali; //array data kembali
 
-	array_hilang : tabHilang; //array data kehilangan
+    array_hilang : tabHilang; //array data kehilangan
     
-	pilihan_menu : string; //variabel yang menyimpan input menu pilihan
+    pilihan_menu : string; //variabel yang menyimpan input menu pilihan
 	
-	active_user : tuser; //variabel yang menyimpan nama username yg lagi login
+    active_user : tuser; //variabel yang menyimpan nama username yg lagi login
 	
-	isLogin : boolean; //variabel yang menentukan apakah lagi ada user yang aktif
+    isLogin : boolean; //variabel yang menentukan apakah lagi ada user yang aktif
     
     isSave : boolean; //variabel yang menyatakan apakah data sudah disimpan atau belum
 	
-	willExit : Boolean; //variabel yang menentukan apakah program akan berhenti
+    willExit : Boolean; //variabel yang menentukan apakah program akan berhenti
 	
-	nama_file_buku, nama_file_user, nama_file_pinjam, nama_file_kembali, nama_file_hilang: string;
+    nama_file_buku, nama_file_user, nama_file_pinjam, nama_file_kembali, nama_file_hilang: string;
     //nama file csv yang dimuat oleh program
 
 begin
@@ -63,15 +63,15 @@ begin
 
             case (pilihan_menu) of (*Percabangan yang disesuaikan dengan input user*)
 
-            'login' : loginAnggota(array_user,nama_file_user,active_user,isLogin);
+                'login' : loginAnggota(array_user,nama_file_user,active_user,isLogin);
 
-            'cari' : CetakKategori(array_buku);
+                'cari' : CetakKategori(array_buku);
 
-            'caritahunterbit' : CetakDariTahun(array_buku);
+                'caritahunterbit' : CetakDariTahun(array_buku);
 
-            'exit' : exiting_program(array_buku, array_user, array_pinjam, array_kembali, array_hilang, nama_file_kembali, nama_file_pinjam, nama_file_user, nama_file_buku, nama_file_hilang, willExit,isLogin,isSave);
+                'exit' : exiting_program(array_buku, array_user, array_pinjam, array_kembali, array_hilang, nama_file_kembali, nama_file_pinjam, nama_file_user, nama_file_buku, nama_file_hilang, willExit,isLogin,isSave);
                     
-            'help' : showHelp(isLogin); 
+                'help' : showHelp(isLogin); 
 
             end;
 
@@ -85,37 +85,37 @@ begin
 
                 case (pilihan_menu) of
 
-                'register' : registerAnggota( array_user, active_user, isSave);
+                    'register' : registerAnggota( array_user, active_user, isSave);
                 
-                'cari' : CetakKategori(array_buku);
+                    'cari' : CetakKategori(array_buku);
 
-                'caritahunterbit' : CetakDariTahun(array_buku);
+                    'caritahunterbit' : CetakDariTahun(array_buku);
 
-                'exit' : exiting_program(array_buku,array_user,array_pinjam,array_kembali,array_hilang,nama_file_kembali, nama_file_pinjam, nama_file_user, nama_file_buku, nama_file_hilang,willExit,isLogin,isSave);
+                    'exit' : exiting_program(array_buku,array_user,array_pinjam,array_kembali,array_hilang,nama_file_kembali, nama_file_pinjam, nama_file_user, nama_file_buku, nama_file_hilang,willExit,isLogin,isSave);
                         
-                'help' : showHelp(isLogin);
+                    'help' : showHelp(isLogin);
 
-                'pinjam_buku': pinjam_buku(array_buku,array_pinjam,active_user,isSave);
+                    'pinjam_buku': pinjam_buku(array_buku,array_pinjam,active_user,isSave);
 
-                'kembalikan_buku' : kembalikan_buku (array_buku, array_pinjam, array_kembali, active_user, isSave ) ;
+                    'kembalikan_buku' : kembalikan_buku (array_buku, array_pinjam, array_kembali, active_user, isSave ) ;
         
-                'lapor_hilang' : RegLost (array_hilang, isSave);
+                    'lapor_hilang' : RegLost (array_hilang, isSave);
 
-                'lihat_laporan' : SeeLost (array_hilang, active_user);
+                    'lihat_laporan' : SeeLost (array_hilang, active_user);
                         
-                'tambah_buku' : AddBook (array_buku, active_user, isSave);
+                    'tambah_buku' : AddBook (array_buku, active_user, isSave);
                         
-                'tambah_jumlah_buku' : AddJumlahBuku (array_buku, active_user, isSave);        
+                    'tambah_jumlah_buku' : AddJumlahBuku (array_buku, active_user, isSave);        
 
-                'riwayat' : Riwayat (array_pinjam, array_buku, active_user);
+                    'riwayat' : Riwayat (array_pinjam, array_buku, active_user);
                         
-                'statistik' : Statistik (array_user, array_buku, active_user);
+                    'statistik' : Statistik (array_user, array_buku, active_user);
                     
-                'save' : save(array_buku,array_user,array_pinjam ,array_kembali,array_hilang,nama_file_kembali,nama_file_pinjam,nama_file_user,nama_file_buku,nama_file_hilang,isSave);       
+                    'save' : save(array_buku,array_user,array_pinjam ,array_kembali,array_hilang,nama_file_kembali,nama_file_pinjam,nama_file_user,nama_file_buku,nama_file_hilang,isSave);       
 
-                'cari_anggota' : cariAnggota(array_user, active_user);
+                    'cari_anggota' : cariAnggota(array_user, active_user);
                         
-                'logout' : logout(array_buku,array_user,array_pinjam ,array_kembali,array_hilang,nama_file_kembali,nama_file_pinjam,nama_file_user,nama_file_buku,nama_file_hilang,isSave,isLogin);
+                    'logout' : logout(array_buku,array_user,array_pinjam ,array_kembali,array_hilang,nama_file_kembali,nama_file_pinjam,nama_file_user,nama_file_buku,nama_file_hilang,isSave,isLogin);
 
                 end;
 
