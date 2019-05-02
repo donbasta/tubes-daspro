@@ -6,8 +6,8 @@ interface
         mark = ',';
 
     function csv (t: string) : string;
-	(*Menambahkan tanda petik ganda ke ujung-ujung string dan mengubah tanda petik ganda
-	di string menjadi dua petik ganda*)
+    (*Menambahkan tanda petik ganda ke ujung-ujung string dan mengubah tanda petik ganda
+    di string menjadi dua petik ganda*)
 
     procedure csv_comma_solver(var f : Text; var a : string);
     (*Prosedur ini membaca data dari file csv apabila terdapat tanda koma dan tanda petik ganda yang 
@@ -18,11 +18,12 @@ implementation
     function csv (t: string) : string;
     (*Menambahkan tanda petik ganda pada ujung-ujung data dan mengubah tanda petik ganda 
     di dalam data menjadi dua buah untuk menyiasati keberadaan tanda koma pada data.*)
-    {Kamus Lokal}
+    (*Kamus Lokal*)
 	var
-		data_baru : string;
+	data_baru : string;
         i : integer;
-    {Algoritma}
+	
+    (*Algoritma*)
 	begin
         data_baru := '"';
         for i:=1 to Length(t) do begin
@@ -39,12 +40,13 @@ implementation
     
 
     procedure csv_comma_solver(var f: Text; var a : string);
-    {Kamus Lokal}
+    (*Kamus Lokal*)
     var
         chara : char;
         quote_count : integer;
         inside_count : boolean;
         i: integer;
+	
     (*Algoritma*)
     begin
 
